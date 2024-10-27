@@ -51,3 +51,5 @@ En Excel, la salida debería ser algo parecido a esto:
 <img style=«float: left;» src=«img/example_output.jpg»>
 
 Nota: Este script elimina los prefijos de datos de Apple Health: `HKQuantityTypeIdentifier`, `HKCategoryTypeIdentifier` y `HKCharacteristicTypeIdentifier` para mejorar la legibilidad. No dude en comentar esas líneas en el código con un `#` si desea mantenerlas en la salida CSV.
+
+Esto es un fork traducido al castellano de https://github.com/jameno/Simple-Apple-Health-XML-to-CSV
