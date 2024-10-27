@@ -4,12 +4,13 @@
 Simple Apple Health XML to CSV
 ==============================
 :File: convert.py
-:Description: Convert Apple Health "export.xml" file into a csv
+:Description: Convertir datos de salud de Apple de XML a CSV
 :Version: 0.0.2
 :Created: 2019-10-04
 :Updated: 2023-10-29
 :Authors: Jason Meno (jam)
-:Dependencies: An export.xml file from Apple Health
+:Translate Spanish: David Carrero (dcarrero)
+:Dependencies: Un archivo export.xml de Apple Health
 :License: BSD-2-Clause
 """
 
@@ -25,15 +26,15 @@ import sys
 
 def preprocess_to_temp_file(file_path):
     """
-    The export.xml file is where all your data is, but Apple Health Export has
-    two main problems that make it difficult to parse: 
-        1. The DTD markup syntax is exported incorrectly by Apple Health for some data types.
-        2. The invisible character \x0b (sometimes rendered as U+000b) likes to destroy trees. Think of the trees!
+    El archivo export.xml es donde están todos tus datos, pero Apple Health Export tiene
+    dos problemas principales que dificultan su análisis: 
+    1. La sintaxis de marcado DTD es exportada incorrectamente por Apple Health para algunos tipos de datos.
+    2. Al carácter invisible \x0b (a veces representado como U+000b) le gusta destruir árboles. ¡Piensa en los árboles!
 
-    Knowing this, we can save the trees and pre-processes the XML data to avoid destruction and ParseErrors.
+    Sabiendo esto, podemos salvar los árboles y pre-procesar los datos XML para evitar la destrucción y ParseErrors.
     """
 
-    print("Pre-processing and writing to temporary file...", end="")
+    print("Preprocesamiento y escritura en archivo temporal...", end="")
     sys.stdout.flush()
 
     temp_file_path = "temp_preprocessed_export.xml"
@@ -56,11 +57,11 @@ def strip_invisible_character(line):
 
 
 def xml_to_csv(file_path):
-    """Loops through the element tree, retrieving all objects, and then
-    combining them together into a dataframe
+    """Recorre el árbol de elementos, recupera todos los objetos y, a continuación
+       combinarlos en un marco de datos
     """
 
-    print("Converting XML File to CSV...", end="")
+    print("Convirtiendo Fichero XML a CSV...", end="")
     sys.stdout.flush()
 
     attribute_list = []
@@ -123,19 +124,19 @@ def xml_to_csv(file_path):
 
 
 def save_to_csv(health_df):
-    print("Saving CSV file...", end="")
+    print("Guardando Fichero CSV...", end="")
     sys.stdout.flush()
 
     today = dt.datetime.now().strftime('%Y-%m-%d')
     health_df.to_csv("apple_health_export_" + today + ".csv", index=False)
-    print("done!")
+    print("¡hecho!")
 
     return
 
 def remove_temp_file(temp_file_path):
-    print("Removing temporary file...", end="")
+    print("Eliminando el fichero temporal...", end="")
     os.remove(temp_file_path)
-    print("done!")
+    print("¡hecho!")
     
     return
 
