@@ -1,55 +1,53 @@
-# Simple Apple Health XML to CSV
+# Convertir datos de salud de Apple de XML a CSV
 
-A simple script to convert Apple Health's export.xml file to an easy to use csv.
+Un sencillo script para convertir el archivo export.xml de Apple Health en un csv fácil de usar.
 
 
 
-## How to Run 
+## Como ejecutarlo 
 
-### 1. Verify you have Python 3 & Pandas installed on your machine or environment
+### 1. Verifique que tiene Python 3 y Pandas instalados en su máquina o entorno
 
-`python --version` should return _Python 3.x.x_ where x is any number. 
+`python --version` debería devolver _Python 3.x.x_ donde x es cualquier número. 
 
-If you have Python 2.x.x, please upgrade to Python 3 here: https://www.python.org/downloads/ (or specify your environment's Python version)
+Si tiene Python 2.x.x, actualice a Python 3 aquí: https://www.python.org/downloads/ (o especifique la versión de Python de su entorno)
 
-`python3 -c "import pandas"` should return blank from the command line
+`python3 -c «import pandas»` debería devolver en blanco desde la línea de comandos
 
-If you get a _**ModuleNotFoundError: No module named 'pandas'**_ error, install pandas and try again:
+Si obtiene un _**ModuleNotFoundError: No module named 'pandas'**_ error, instale pandas e inténtelo de nuevo:
 
 `pip3 install pandas`
 
-
-### 2. Export your Apple Health Data
+### 2. Exporte sus datos de Apple Health
 
 | Health Home | ➡️ | Export Data |
 |--|--|--|
-|<img style="float: left;" src="img/health_home.jpg" width=300>||<img style="float: left;" src="img/export_data_button.jpg" width = 300 >|
+|<img style=«float: left;» src=«img/health_home.jpg» width=300>|||<img style=«float: left;» src=«img/export_data_button.jpg» width = 300 >||
 
-Your data will be prepared, and then you can transfer the export.zip file to your machine.
+Sus datos serán preparados, y entonces usted puede transferir el archivo export.zip a su máquina.
 
-### 3. Unzip the file, which should contain:
+### 3. Descomprima el archivo, que debería contener:
 
-   * apple_health_export
-     * export.xml (This is the file with your data that you want to convert)
-     
-     * export_cda.xml
-     
-       
+* apple_health_export
+* export.xml (Este es el archivo con los datos que desea convertir)
 
-### 4. Place the "apple_health_xml_convert.py" file from this repo into the folder alongside the files and run the script
+* export_cda.xml
+
+
+### 4. Coloque el archivo «apple_health_xml_convert.py» de este repositorio en la carpeta junto a los archivos y ejecute el script
 
 `python3 apple_health_xml_convert.py`
 
 
 
-The export will be written with the format:
+La exportación se escribirá con el formato
 
 * **apple_health_export_YYYY-MM-DD.csv**
 
-  
 
-In Excel, the output should look something like this:
 
-<img style="float: left;" src="img/example_output.jpg">
+En Excel, la salida debería ser algo parecido a esto:
 
-Note: This script removes the Apple Health data prefixes: `HKQuantityTypeIdentifier`, `HKCategoryTypeIdentifier`, and `HKCharacteristicTypeIdentifier` for increased legibility. Feel free to comment out those lines in the code with a `#` if you want to keep them in the CSV output.
+<img style=«float: left;» src=«img/example_output.jpg»>
+
+Nota: Este script elimina los prefijos de datos de Apple Health: `HKQuantityTypeIdentifier`, `HKCategoryTypeIdentifier` y `HKCharacteristicTypeIdentifier` para mejorar la legibilidad. No dude en comentar esas líneas en el código con un `#` si desea mantenerlas en la salida CSV.
