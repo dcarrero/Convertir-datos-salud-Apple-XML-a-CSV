@@ -22,7 +22,7 @@ Si obtiene un _**ModuleNotFoundError: No module named 'pandas'**_ error, instale
 
 | Health Home | ➡️ | Export Data |
 |--|--|--|
-|<img style=«float: left;» src=«img/health_home.jpg» width=300>|||<img style=«float: left;» src=«img/export_data_button.jpg» width = 300 >||
+|<img style="float: left;" src="img/inicio-salud-apple.jpg" width=300>||<img style="float: left;" src="img/boton_exportar-datos.jpg" width = 300 >|
 
 Sus datos serán preparados, y entonces usted puede transferir el archivo export.zip a su máquina.
 
@@ -48,7 +48,7 @@ La exportación se escribirá con el formato
 
 En Excel, la salida debería ser algo parecido a esto:
 
-<img style=«float: left;» src=«img/example_output.jpg»>
+<img style="float: left;" src="img/example_output.jpg">
 
 Nota: Este script elimina los prefijos de datos de Apple Health: `HKQuantityTypeIdentifier`, `HKCategoryTypeIdentifier` y `HKCharacteristicTypeIdentifier` para mejorar la legibilidad. No dude en comentar esas líneas en el código con un `#` si desea mantenerlas en la salida CSV.
 
